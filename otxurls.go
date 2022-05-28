@@ -47,7 +47,7 @@ func main() {
 	for _, domain := range domains {
 		page := 0
 		for {
-			r, err := c.Get(fmt.Sprintf("https://otx.alienvault.com/api/v1/indicators/hostname/%s/url_list?limit=50&page=%d", domain, page))
+			r, err := c.Get(fmt.Sprintf("https://otx.alienvault.com/otxapi/indicators/ip/url_list/%s?limit=50&page=%d", domain, page))
 			if err != nil {
 				log.Fatalf("Error: %v", err)
 			}
